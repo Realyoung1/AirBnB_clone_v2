@@ -232,6 +232,7 @@ class HBNBCommand(cmd.Cmd):
         """retrieve all instances of a class and
         retrieve the number of instances
         """
+        
         my_list = line.split('.')
         if len(my_list) >= 2:
             if my_list[1] == "all()":
