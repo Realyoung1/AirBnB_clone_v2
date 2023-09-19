@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This is the base model class for AirBnB"""
+
+"""AirBnB clone v2 base model class"""
+
 import uuid
 import models
 from datetime import datetime
@@ -8,11 +10,11 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-
 class BaseModel:
     """This class will defines all common attributes/methods
     for other classes
     """
+    
     id = Column(String(60), nullable=False, unique=True, primary_key=True)
     created_at = Column(DateTime, default=datetime.utcnow(), nullable=False)
     updated_at = Column(DateTime, default=datetime.utcnow(), nullable=False)
@@ -27,6 +29,7 @@ class BaseModel:
             created_at: creation date
             updated_at: updated date
         """
+        
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
@@ -46,12 +49,14 @@ class BaseModel:
         Return:
             returns a string of class name, id, and dictionary
         """
+        
         return "[{}] ({}) {}".format(
             type(self).__name__, self.id, self.__dict__)
 
     def __repr__(self):
         """return a string representaion
         """
+        
         return self.__str__()
 
     def save(self):
@@ -66,6 +71,7 @@ class BaseModel:
         Return:
             returns a dictionary of all the key values in __dict__
         """
+        
         my_dict = dict(self.__dict__)
         if "_sa_instance_state" in my_dict:
             del my_dict["_sa_instance_state"]
