@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""This is the database storage class for AirBnB"""
 
+"""AirBnB cloned v2 data storage class"""
 from models.base_model import BaseModel, Base
 from models.user import User
 from models.state import State
@@ -12,7 +12,6 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 
-
 class DBStorage:
     """This class save instances to a mysql db and
     get instances from the db
@@ -20,6 +19,7 @@ class DBStorage:
         __engine: create the interfaces of comunication with db
         __session: open a comunication with the db
     """
+    
     __engine = None
     __session = None
 
@@ -36,6 +36,7 @@ class DBStorage:
 
     def all(self, cls=None):
         """show all the instances"""
+        
         instances = {}
         if cls is None:
             all_cls = ["State", "City", "User", "Place", "Review", "Amenity"]
@@ -60,15 +61,18 @@ class DBStorage:
 
     def save(self):
         """commit all changes of the current database session"""
+        
         self.__session.commit()
 
     def delete(self, obj=None):
         """ delete from the current database session"""
+        
         if obj is not None:
             self.__session.delete(obj)
 
     def reload(self):
         """ reload all the objs"""
+        
         Base.metadata.create_all(self.__engine)
         Session = scoped_session(sessionmaker(
             bind=self.__engine, expire_on_commit=False))
