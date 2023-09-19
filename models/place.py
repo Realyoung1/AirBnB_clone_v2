@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This is the place class"""
+
+"""Tthe place model class"""
+
 import os
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, Integer, String, Float, Table
@@ -18,7 +20,6 @@ place_amenity = Table('place_amenity', Base.metadata,
                              nullable=False,
                              primary_key=True))
 
-
 class Place(BaseModel, Base):
     """This is the class for Place
     Attributes:
@@ -34,6 +35,7 @@ class Place(BaseModel, Base):
         longitude: longitude in float
         amenity_ids: list of Amenity ids
     """
+  
     __tablename__ = "places"
     city_id = Column(String(60), ForeignKey('cities.id'), nullable=False)
     user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
@@ -55,6 +57,7 @@ class Place(BaseModel, Base):
         @property
         def reviews(self):
             """returns the list of Review instances"""
+          
             review_list = []
             objs_ = models.storage.all(Review)
             for key, value in objs_.items():
@@ -65,6 +68,7 @@ class Place(BaseModel, Base):
         @property
         def amenities(self):
             """returns the list of Amenities instances"""
+          
             amenity_list = []
             objs_ = models.storage.all(Amenity)
             for key, value in objs_.items():
