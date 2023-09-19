@@ -5,6 +5,7 @@
 -- hbnb_test had SELECTED privilegea on the database
 -- hbnb_test_db or the user hbnb_test already exists, your script
 
+
 CREATE DATABASE IF NOT EXISTS hbnb_test_db;
 CREATE USER IF NOT EXISTS hbnb_test@localhost IDENTIFIED BY 'hbnb_test_pwd';
 GRANT ALL PRIVILEGES ON hbnb_test_db.* TO hbnb_test@localhost;
