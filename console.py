@@ -14,7 +14,6 @@ from models.place import Place
 from models.review import Review
 from shlex import split
 
-
 class HBNBCommand(cmd.Cmd):
     """tentry point for the command interpreter
     """
