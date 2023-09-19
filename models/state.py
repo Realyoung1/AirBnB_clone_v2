@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This is the state class"""
+
+"""The states model class"""
+
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
@@ -7,12 +9,12 @@ from models.city import City
 import models
 import os
 
-
 class State(BaseModel, Base):
     """This is the class for State
     Attributes:
         name: input name
     """
+    
     __tablename__ = 'states'
 
     name = Column(String(128), nullable=False)
@@ -24,6 +26,7 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """Return cities"""
+            
             all_cities = models.storage.all(City)
             all_cities_state = []
             for key, value in all_cities.items():
