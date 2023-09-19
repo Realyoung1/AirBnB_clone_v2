@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 """AirBnB Clone V2 consoleed"""
+
 import cmd
 from models import storage
 from datetime import datetime
