@@ -16,7 +16,7 @@ from shlex import split
 
 
 class HBNBCommand(cmd.Cmd):
-    """this class is entry point of the command interpreter
+    """tentry point for the command interpreter
     """
     prompt = "(hbnb) "
     all_classes = {"BaseModel", "User", "State", "City",
@@ -27,15 +27,15 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_quit(self, line):
-        """Quit command to exit the program"""
+        """exiting the program"""
         return True
 
     def do_EOF(self, line):
-        """Quit command to exit the program at end of file"""
+        """exiting the program at end of file"""
         return True
 
     def do_create(self, line):
-        """Creates a new instance of BaseModel, saves it
+        """developed a new instance of BaseModel, saves it
         Exceptions:
             SyntaxError: when there is no args given
             NameError: when there is no object taht has the name
