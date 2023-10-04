@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# sets up your web servers for the deployment of web_static
+# im settins up my web servers to deploy the web_static
+# nginx has been installed
 apt-get update
 apt-get -y install nginx
 mkdir -p /data/
