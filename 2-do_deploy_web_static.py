@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""distributes an archive to your web servers"""
+# distributes an archive to your web servers
 
 from fabric.api import *
 from os import path
@@ -7,11 +7,11 @@ from datetime import datetime
 from shlex import split
 
 env.user = 'ubuntu'
-env.hosts = ['34.74.70.205', '34.224.30.177']
+env.hosts = ['52.91.148.167', '52.86.158.155']
 
 
 def do_deploy(archive_path):
-    """Deplay the archive tgz"""
+    """Deplayeds archive tgz"""
     if not path.exists(archive_path) or (
                                          path.exists(archive_path) and
                                          path.isdir(archive_path)):
