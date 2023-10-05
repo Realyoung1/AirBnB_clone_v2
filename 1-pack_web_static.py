@@ -11,7 +11,7 @@ from datetime import datetime
 from shlex import split
 
 env.user = 'ubuntu'
-env.hosts = ['34.74.70.205', '34.224.30.177']
+env.hosts = ['52.91.148.167', '52.86.158.155']
 
 
 def do_pack():
