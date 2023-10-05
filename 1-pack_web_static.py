@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-"""generates a .tgz archive from the contents of the web_static
-   folder of your AirBnB Clone repo"""
+# i used the fabrrical scrited generates a .tgz archive from the
+# contentsof the web_static folder of your AirBnB Clone repo
+# contentsof the web_static
+# all files ae inside a folder web_static
+# archives were created
 
 from fabric.api import *
 from os import path
@@ -12,7 +15,7 @@ env.hosts = ['34.74.70.205', '34.224.30.177']
 
 
 def do_pack():
-    """Packing a dir in .tgz"""
+    """Packed the directory in .tgz"""
     print("Packing web_static to versions/web_static_20170314233357.tgz")
     if not path.exists('versions') or (
                                        path.exists('versions') and
