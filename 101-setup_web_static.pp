@@ -1,6 +1,6 @@
-# Configures a web server for deployment of web_static.
+# func configgurration for the deployment of web_static.
 
-# Nginx configuration file
+# func best Nginx configured file
 $nginx_conf = "server {
     listen 80 default_server;
     listen [::]:80 default_server;
