@@ -40,5 +40,5 @@ def do_deploy(archive_path):
         run(cmd_cre_sym)
         print("New version deployed!")
         return True
-    except:
+    except FileNotFoundError:
         return False
