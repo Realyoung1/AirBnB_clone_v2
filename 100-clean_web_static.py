@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" deletes out-of-date archives"""
+# funcs scripted that deletes out-of-date archived
+# Prototype: def do_clean(number=0):
+# number of archived
 
 from fabric.api import *
 from os import path
@@ -7,11 +9,11 @@ from datetime import datetime
 from shlex import split
 
 env.user = 'ubuntu'
-env.hosts = ['34.74.70.205', '34.224.30.177']
+env.hosts = ['52.91.148.167', '52.86.158.155']
 
 
 def do_pack():
-    """Packing a dir in .tgz"""
+    """Packing the directory in .tgz"""
     print("Packing web_static to versions/web_static_20170314233357.tgz")
     if not path.exists('versions') or (
                                        path.exists('versions') and
@@ -33,7 +35,7 @@ def do_pack():
 
 
 def do_deploy(archive_path):
-    """Deplay the archive tgz"""
+    """Deplay a archive /tgz"""
     if not path.exists(archive_path) or (
                                          path.exists(archive_path) and
                                          path.isdir(archive_path)):
@@ -67,7 +69,7 @@ def do_deploy(archive_path):
 
 
 def deploy():
-    """creates and distributes an archive to your web servers"""
+    """creates and distris the archive to your web servers"""
     archive_path = do_pack()
     if archive_path is None:
         return False
@@ -76,7 +78,7 @@ def deploy():
 
 
 def do_clean(number=0):
-    """deletes out-of-date archives"""
+    """deletes all the  out-of-date archives"""
     if number == '0':
         number = int(number) + 1
     else:
