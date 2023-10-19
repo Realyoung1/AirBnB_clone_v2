@@ -6,6 +6,7 @@
     /c/<text>: display “C ” followed by the value of the text
     /python/<text>: display “Python ”, foll the value of text
     /number/<n>: display “n is a number” only if n is an int
+    /number_template/<n>: HTML page only if n is an int
     in my route def option strict_slashes=False was used
 """
 from flask import Flask, render_template
