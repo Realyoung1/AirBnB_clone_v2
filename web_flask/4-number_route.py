@@ -5,7 +5,7 @@
     routes /: display “Hello HBNB!” /hbnb: display “HBNB”
     /c/<text>: display “C ” followed by the value of the text
     /python/<text>: display “Python ”, foll the value of text
-    /python/(<text>): display “Python ”, foll by value of text
+    /number/<n>: display “n is a number” only if n is an int
     in my route def option strict_slashes=False was used
 """
 from flask import Flask
