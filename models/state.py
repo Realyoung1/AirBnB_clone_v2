@@ -15,7 +15,6 @@ class State(BaseModel, Base):
     Attributes:
         name: input name
     """
-    
     __tablename__ = 'states'
 
     name = Column(String(128), nullable=False)
@@ -27,7 +26,6 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """Return cities"""
-            
             all_cities = models.storage.all(City)
             all_cities_state = []
             for key, value in all_cities.items():
