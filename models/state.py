@@ -9,6 +9,7 @@ from models.city import City
 import models
 import os
 
+
 class State(BaseModel, Base):
     """This is the class for State
     Attributes:
