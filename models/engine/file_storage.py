@@ -19,7 +19,6 @@ class FileStorage:
         __file_path: path to the JSON file
         __objects: objects will be stored
     """
-    
     __file_path = "file.json"
     __objects = {}
 
@@ -28,7 +27,6 @@ class FileStorage:
         Return:
             returns a dictionary of __object
         """
-        
         if cls is None:
             return self.__objects
         dict = {}
@@ -49,7 +47,6 @@ class FileStorage:
     def save(self):
         """serialize the file path to JSON file path
         """
-        
         my_dict = {}
         for key, value in self.__objects.items():
             my_dict[key] = value.to_dict()
@@ -59,7 +56,6 @@ class FileStorage:
     def reload(self):
         """serialize the file path to JSON file path
         """
-        
         try:
             with open(self.__file_path, 'r', encoding="UTF-8") as f:
                 for key, value in (json.load(f)).items():
@@ -71,7 +67,6 @@ class FileStorage:
     def delete(self, obj=None):
         """Delete obj from __objects if it’s inside
         """
-        
         if obj is not None:
             key = "{}.{}".format(type(obj).__name__, obj.id)
             if key in self.__objects:
