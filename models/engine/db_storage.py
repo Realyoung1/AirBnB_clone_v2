@@ -12,6 +12,7 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 
+
 class DBStorage:
     """This class save instances to a mysql db and
     get instances from the db
