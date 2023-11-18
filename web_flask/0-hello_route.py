@@ -5,14 +5,14 @@
     with routes /: display “Hello HBNB!”
     in my route def option strict_slashes=False was used
 """
-from flask import Flask, render_template
-app = Flask("__name__")
+from flask import Flask
+app = Flask(__name__)
 
 
-@app.route('/', strict_slashes=False)
-def hello():
+@app.route('/airbnb-onepage/', strict_slashes=False)
+def hello_hbnb():
     """Say hello to the client"""
-    return render_template("10-hbnb_filters.html")
+    return "Hello HBNB"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=None)
+    app.run(host="0.0.0.0", port=5000)
